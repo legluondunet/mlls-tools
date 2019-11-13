@@ -27,4 +27,4 @@ echo "cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --de
 cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --device $cddev $cdname.toc
 
 toc2cue $cdname.toc $cdname.cue
-rm -f -r $cdname.toc lsscsi
+rm -f -r $cdname.toc versions.txt toc2cue cdrdao lsscsi
