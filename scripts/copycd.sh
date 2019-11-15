@@ -4,13 +4,15 @@ cdname=$1
 
 cddev1=$(mount |grep -i $cdname |cut -d " " -f 1)
 
-if [[ $cddev1 == *"/dev/sr"* ]]; then
-cddev=$(./lsscsi -g |grep $cddev1 | tail -c -10)
-else
+#if [[ $cddev1 == *"/dev/sr"* ]] && ![ "-" ]; then
+#cddev=$(./lsscsi -g |grep $cddev1 | tail -c -10)
+#else
 cddev=$cddev1
-fi
+#fi
 
 echo "les variables --> cdname:$cdname cddev1:$cddev1 cddev:$cddev"
+
+umount $cddev1
 
 rm -f -r $cdname.*
 
