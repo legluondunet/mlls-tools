@@ -14,8 +14,8 @@ echo "les variables --> cdname:$cdname cddev1:$cddev1 cddev:$cddev"
 
 rm -f -r $cdname.*
 
-echo "cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --device $cddev $cdname.toc"
-cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --device $cddev $cdname.toc
+echo "./cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --device $cddev $cdname.toc"
+./cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --device $cddev $cdname.toc
 
-toc2cue $cdname.toc $cdname.cue
+./toc2cue $cdname.toc $cdname.cue
 #rm -f -r $cdname.toc versions.txt toc2cue cdrdao lsscsi
