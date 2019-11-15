@@ -1,14 +1,5 @@
 #!/bin/bash
 
-if ! [ -x "$(command -v cdrdao)" ]; then
-  echo 'Error: cdrdao is not installed.'
-exit
-elif 
- ! [ -x "$(command -v toc2cue)" ]; then
-  echo 'Error: toc2cue is not installed.'
-exit
-fi
-
 cdname=$1
 
 cddev1=$(mount |grep -i $cdname |cut -d " " -f 1)
