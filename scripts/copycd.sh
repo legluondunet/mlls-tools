@@ -12,7 +12,7 @@ cddev=$(mount |grep -i $cdname |cut -d " " -f 1)
 
 echo "les variables --> cdname:$cdname cddev:$cddev"
 
-umount $cddev
+udisksctl unmount -b $cddev
 
 rm -f -r $cdname.*
 
