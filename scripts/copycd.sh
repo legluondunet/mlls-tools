@@ -22,7 +22,7 @@ echo "./cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --
 
 ./toc2cue $cdname.toc $cdname.cue
 
-if [ $clean == 1 ]; then
-echo "clean est égal à $clean"
+if [ -z "$clean" ]; then
+echo "la variable clean est vide"
 rm -f -r $cdname.toc versions.txt toc2cue cdrdao
 fi
