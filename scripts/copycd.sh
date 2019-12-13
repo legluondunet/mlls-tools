@@ -17,7 +17,7 @@ udisksctl unmount -b $cddev
 
 rm -f -r $cdname.*
 
-echo "./cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --device $cddev $cdname.toc"
+echo "./cdrdao read-raw --datafile $cdname.bin --driver generic-mmc:0x00020000 --device $cddev $cdname.toc"
 ./cdrdao read-cd --datafile $cdname.bin --driver generic-mmc:0x00020000 --device $cddev $cdname.toc
 
 ./toc2cue $cdname.toc $cdname.cue
