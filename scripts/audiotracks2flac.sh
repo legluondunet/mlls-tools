@@ -6,7 +6,7 @@ cddev=$(mount |grep -i $cdname |cut -d " " -f 1)
 
 echo "les variables --> cdname:$cdname cddev:$cddev"
 
-#LD_LIBRARY_PATH=libs ./cdparanoia -BE -d $cddev
+LD_LIBRARY_PATH=libs ./cdparanoia -BE -d $cddev
 
 
 n=1
@@ -20,4 +20,4 @@ echo convert $final to flac
 ((n++))
 done
 
-#rm -f -r cdparanoia flac metaflac libs audiotracks2flac.sh
+rm -f -r cdparanoia flac metaflac libs audiotracks2flac.sh versions.txt
