@@ -6,10 +6,18 @@ cddev=$(mount |grep -i $cdname |cut -d " " -f 1)
 
 echo "les variables --> cdname:$cdname cddev:$cddev"
 
-LD_LIBRARY_PATH=libs cdparanoia -BE -d $cddev
+#LD_LIBRARY_PATH=libs ./cdparanoia -BE -d $cddev
 
-find . -name '*cdda' -exec bash -c ' mv $0 ${0/\cdda./}' {} \;
 
-LD_LIBRARY_PATH=libs cdparanoia -BE -d $cddev
+n=1
+for f in *.wav 
+do
+final=$(printf "track%02d".wav $n)
+echo "mv "$f" "$final""
+mv "$f" "$final"
+echo convert $final to flac
+./flac -s --best --delete-input-file $final
+((n++))
+done
 
-for i in *.wav; do flac -s --best --delete-input-file $i ; done
+#rm -f -r cdparanoia flac metaflac libs audiotracks2flac.sh
