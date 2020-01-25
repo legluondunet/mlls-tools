@@ -24,6 +24,6 @@ echo "./cdrdao read-cd --read-raw --datafile $cdname.bin --driver generic-mmc:0x
 
 if [ -z "$clean" ]; then
 echo "la variable clean est vide"
-rm -f -r *.toc versions.txt toc2cue cdrdao
+rm -f -r *.toc versions.txt toc2cue cdrdao bchunk bin2iso
 fi
 
