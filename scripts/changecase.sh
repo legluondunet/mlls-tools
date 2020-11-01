@@ -7,8 +7,8 @@ case="$2"
 if cd "$folder"
 then
     	echo "le répertoire $folder existe"
-	chmod -R +w "$folder"
-	ls -l "$folder"
+	chmod -R +w .
+	ls -l
 else
 	echo "répertoire non trouvé, arrêt du script"
 	ls -l
