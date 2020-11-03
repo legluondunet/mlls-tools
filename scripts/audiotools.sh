@@ -27,7 +27,6 @@ echo convert $final to flac
 ./flac -s -f --best --delete-input-file $final
 ((n++))
 done
-mv *.flac "$chemin"
 
 rm -f -r cdparanoia flac metaflac libs audiotools.sh about_audiotools.txt audiotools.tar.xz
 
