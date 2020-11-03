@@ -20,4 +20,5 @@ echo convert $final to flac
 ((n++))
 done
 
-rm -f -r cdparanoia flac metaflac libs audiotracks2flac.sh versions.txt
+rm -f -r lame cdparanoia flac metaflac libs audiotracks2flac.sh about_audiotools.txt
+
