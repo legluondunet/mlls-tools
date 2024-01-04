@@ -33,9 +33,9 @@ done
 }
 
 codec_flac () {
-shortname=${finalname//.wav}
+shortname=${finalname//.cdda.wav}
 echo convert $finalname to $shortname.flac
-./flac -s -f --best --delete-input-file $finalname
+LD_LIBRARY_PATH=libs ./flac -s -f --best --delete-input-file $finalname
 }
 
 
@@ -68,5 +68,4 @@ then
 	methodname_2
 fi
 
-rm -f -r cdparanoia flac lame metaflac libs audiotools.sh about_audiotools.txt audiotools.tar.xz
-
+#rm -f -r cdparanoia flac lame metaflac libs audiotools.sh about_audiotools.txt audiotools.tar.xz
