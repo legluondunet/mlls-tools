@@ -68,4 +68,4 @@ then
 	methodname_2
 fi
 
-#rm -f -r cdparanoia flac lame metaflac libs audiotools.sh about_audiotools.txt audiotools.tar.xz
+rm -f -r cdparanoia flac lame metaflac libs audiotools.sh about_audiotools.txt audiotools.tar.xz
