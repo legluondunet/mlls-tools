@@ -10,7 +10,7 @@ for f in *.wav
 do
 finalname=$(printf "track%02d".wav $n)
 echo "mv "$f" "$finalname""
-mv "$f" "$finalname"
+LD_LIBRARY_PATH=. mv "$f" "$finalname"
 if [ $codecaudio = "flac" ] 
 then
 codec_flac
@@ -24,7 +24,7 @@ for f in *.wav
 do
 finalname=${f//.cdda} 
 echo rename $f to $finalname
-mv "$f" "$finalname"
+LD_LIBRARY_PATH=. mv "$f" "$finalname"
 if [ $codecaudio = "flac" ] 
 then
 codec_flac
@@ -46,7 +46,7 @@ mkdir -p "$chemin"
 fi
 
 cd "$chemin"
-wget https://github.com/legluondunet/mlls-tools/raw/master/audiotools/audiotools.tar.xz
+wget --no-check-certificate https://github.com/legluondunet/mlls-tools/raw/master/audiotools/audiotools.tar.xz
 tar xfv audiotools.tar.xz
 
 cddev=$(mount |grep -i $cdname |cut -d " " -f 1)
