@@ -32,6 +32,16 @@ fi
 done
 }
 
+# xx.wav ex: Moto Racer 1 with winmm provided by GOG
+methodname_3 () {
+for f in *.wav 
+do 
+finalname=${f//.cdda}
+echo "mv "$f" ${finalname//track}"
+LD_LIBRARY_PATH=. mv "$f" ${finalname//track}
+done
+}
+
 codec_flac () {
 shortname=${finalname//.cdda.wav}
 echo convert $finalname to $shortname.flac
@@ -66,6 +76,10 @@ elif [ $methodname = 2 ]
 then
 	echo methodname est égal à 2
 	methodname_2
+elif [ $methodname = 3 ] 
+then
+	echo methodname est égal à 3
+	methodname_3
 fi
 
 rm -f -r cdparanoia flac lame metaflac libs audiotools.sh about_audiotools.txt audiotools.tar.xz
